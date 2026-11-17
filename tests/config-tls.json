@@ -1,0 +1,35 @@
+{
+  "base_msg": {
+    "HTTP_port": 18099,
+    "HTTPS_port": 18443,
+    "certificates": [
+      { "pfx_path": "hhttp-verify.pfx", "pfx_password": "verify123" },
+      { "pfx_path": "hhttp-alt.pfx", "pfx_password": "verify123" }
+    ],
+    "colorful_log": false,
+    "js_exec_timeout_ms": 5000,
+    "websocket_recv_timeout_ms": 2000
+  },
+  "roter": [
+    {
+      "localhost/static/": {
+        "http": { "js_path": "static.js" }
+      }
+    },
+    {
+      "alt.localhost/alt/": {
+        "http": { "js_path": "alt.js" }
+      }
+    },
+    {
+      "localhost/echo": {
+        "http": { "js_path": "echo.js" }
+      }
+    },
+    {
+      "localhost/ws": {
+        "websocket": { "js_path": "ws.js" }
+      }
+    }
+  ]
+}

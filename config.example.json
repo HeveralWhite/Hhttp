@@ -1,0 +1,59 @@
+{
+  "base_msg": {
+    "HTTP_port": 8080,
+    "HTTPS_port": 0,
+    "pfx_path": "",
+    "pfx_password": "",
+    "cert_file": "",
+    "key_file": "",
+    "script_dir": "scripts",
+    "file_max_size": 8388608,
+    "js_exec_timeout_ms": 0,
+    "websocket_recv_timeout_ms": 0,
+    "js_memory_limit": 67108864,
+    "js_security_memory_limit": 67108864,
+    "js_global_memory_limit": 134217728,
+    "colorful_log": true,
+    "js_security_script": "",
+    "js_global_script": ""
+  },
+  "roter": [
+    {
+      "/ws": {
+        "websocket": {
+          "js_path": "ws_echo.js"
+        }
+      }
+    },
+    {
+      "/": {
+        "http": {
+          "js_path": "hello.js",
+          "js_read_rule": "",
+          "js_write_rule": "",
+          "js_sql_read_rule": "",
+          "js_sql_write_rule": "",
+          "js_full_access": false
+        }
+      }
+    }
+  ],
+  "undefine_roter": {
+    "http": {
+      "js_path": "",
+      "js_read_rule": "",
+      "js_write_rule": "",
+      "js_sql_read_rule": "",
+      "js_sql_write_rule": "",
+      "js_full_access": false
+    },
+    "websocket": {
+      "js_path": "",
+      "js_read_rule": "",
+      "js_write_rule": "",
+      "js_sql_read_rule": "",
+      "js_sql_write_rule": "",
+      "js_full_access": false
+    }
+  }
+}

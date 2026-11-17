@@ -1,0 +1,96 @@
+{
+  "base_msg": {
+    "HTTP_port": 18099,
+    "HTTPS_port": 0,
+    "pfx_path": "",
+    "pfx_password": "",
+    "colorful_log": false,
+    "js_exec_timeout_ms": 5000,
+    "websocket_recv_timeout_ms": 2000,
+    "file_max_size": 1048576,
+    "js_security_script": "security.js",
+    "js_global_script": {
+      "js_path": "global.js",
+      "js_full_access": true
+    }
+  },
+  "roter": [
+    {
+      "/echo": {
+        "http": {
+          "js_path": "echo.js",
+          "js_read_rule": "data",
+          "js_write_rule": "tmp"
+        }
+      }
+    },
+    {
+      "/file/": {
+        "http": {
+          "js_path": "file.js",
+          "js_read_rule": "data",
+          "js_write_rule": "tmp"
+        }
+      }
+    },
+    {
+      "/stream/": {
+        "http": {
+          "js_path": "stream.js"
+        }
+      }
+    },
+    {
+      "/static/": {
+        "http": {
+          "js_path": "static.js"
+        }
+      }
+    },
+    {
+      "/download/": {
+        "http": {
+          "js_path": "download.js",
+          "js_read_rule": "data"
+        }
+      }
+    },
+    {
+      "/inject/": {
+        "http": {
+          "js_path": "inject.js"
+        }
+      }
+    },
+    {
+      "/cookie/": {
+        "http": {
+          "js_path": "cookie.js"
+        }
+      }
+    },
+    {
+      "/sql/": {
+        "http": {
+          "js_path": "sqlite.js",
+          "js_sql_read_rule": "data/test.db",
+          "js_sql_write_rule": "data/test.db"
+        }
+      }
+    },
+    {
+      "/escalate/": {
+        "http": {
+          "js_path": "escalate.js"
+        }
+      }
+    },
+    {
+      "/ws": {
+        "websocket": {
+          "js_path": "ws.js"
+        }
+      }
+    }
+  ]
+}

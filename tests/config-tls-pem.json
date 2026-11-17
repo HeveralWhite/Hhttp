@@ -1,0 +1,18 @@
+{
+  "base_msg": {
+    "HTTP_port": 0,
+    "HTTPS_port": 18444,
+    "certificates": [
+      { "cert_file": "cert.pem", "key_file": "key.pem" }
+    ],
+    "colorful_log": false,
+    "js_exec_timeout_ms": 5000
+  },
+  "roter": [
+    {
+      "/static/": {
+        "http": { "js_path": "static.js" }
+      }
+    }
+  ]
+}

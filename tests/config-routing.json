@@ -1,0 +1,55 @@
+{
+  "base_msg": {
+    "HTTP_port": 18101,
+    "HTTPS_port": 0,
+    "colorful_log": false,
+    "js_exec_timeout_ms": 5000,
+    "websocket_recv_timeout_ms": 2000
+  },
+  "roter": [
+    {
+      "/both": {
+        "http": { "js_path": "route-http.js" }
+      }
+    },
+    {
+      "/both": {
+        "websocket": { "js_path": "route-ws.js" }
+      }
+    },
+    {
+      "/http-only": {
+        "http": { "js_path": "route-http.js" }
+      }
+    },
+    {
+      "/ws-only": {
+        "websocket": { "js_path": "route-ws.js" }
+      }
+    },
+    {
+      "*.test/pick/": {
+        "http": { "js_path": "route-parent.js" }
+      }
+    },
+    {
+      "*.wild.test/pick/": {
+        "http": { "js_path": "route-deep.js" }
+      }
+    },
+    {
+      "exact.test/name": {
+        "http": { "js_path": "route-exact.js" }
+      }
+    },
+    {
+      "exact.test/": {
+        "http": { "js_path": "route-prefix.js" }
+      }
+    }
+  ],
+  "undefine_roter": {
+    "http": { "js_path": "route-fallback.js" },
+    "websocket": { "js_path": "route-fallback-ws.js" }
+  }
+}
